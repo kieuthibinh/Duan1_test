@@ -22,5 +22,6 @@ namespace eshopsolution_data.entitys
         public Guid UserId { get; set; }
 
         public AppUser AppUser { get; set; }
+        //hihi 
     }
 }
