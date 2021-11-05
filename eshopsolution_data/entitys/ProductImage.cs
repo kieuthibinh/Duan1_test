@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace eshopsolution_data.entitys
 {
-    class ProductImage
+    public class ProductImage
     {
         public int Id { get; set; }
 

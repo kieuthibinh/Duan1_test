@@ -19,8 +19,21 @@ namespace eshopsolution_data.Datacontext_binh
         }
 
         public DbSet<product> Products { get; set; }
-        public DbSet<Hang> Hangs { get; set; }
-        public DbSet<KhachHang> KhachHangs { get; set; }
-        public DbSet<LichSu> LichSus { get; set; }
+        public DbSet<AppConfig> AppConfig { get; set; }
+        public DbSet<AppRole> AppRole { get; set; }
+        public DbSet<AppUser> AppUser { get; set; }
+        public DbSet<Carts> Carts { get; set; }
+        public DbSet<Categorycs> Categorycs { get; set; }
+        public DbSet<CategoryTranslation> CategoryTranslation { get; set; }
+        public DbSet<Contact> Contact { get; set; }
+        public DbSet<Language> Language { get; set; }
+        public DbSet<Orders> Orders { get; set; }
+        public DbSet<product> product { get; set; }
+        public DbSet<ProductImage> ProductImage { get; set; }
+        public DbSet<ProductInCategory> ProductInCategory { get; set; }
+        public DbSet<ProductTranslation> ProductTranslation { get; set; }
+        public DbSet<Promotion> Promotion { get; set; }
+        public DbSet<Slide> Slide { get; set; }
+        public DbSet<Transactions> Transactions { get; set; }
     }
 }
