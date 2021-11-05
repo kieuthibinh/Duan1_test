@@ -16,5 +16,7 @@ namespace eshopsolution_data.entitys
         public Orders Order { get; set; }
 
         public product Product { get; set; }
+      
+        
     }
 }

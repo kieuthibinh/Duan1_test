@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using eshopsolution_data.Confuguration;
 using eshopsolution_data.entitys;
 using Microsoft.EntityFrameworkCore;
 
@@ -10,12 +11,32 @@ namespace eshopsolution_data.Datacontext_binh
 {
     public class eshopdbcontexxt:DbContext
     {
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        public eshopdbcontexxt(DbContextOptions options) : base(options)
         {
-            if (!optionsBuilder.IsConfigured)
-            {
-                optionsBuilder.UseSqlServer("Data Source=DESKTOP-5G99QSN\\SQLEXPRESS;Initial Catalog=master;User ID=binh123;Password=123");
-            }
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new CartConfiguration());
+
+            modelBuilder.ApplyConfiguration(new AddConfuguration());
+            modelBuilder.ApplyConfiguration(new productConfuguration());
+            modelBuilder.ApplyConfiguration(new categoryConfiguration());
+            modelBuilder.ApplyConfiguration(new produckincategoryConfiguration());
+            modelBuilder.ApplyConfiguration(new OrderConfiguration());
+
+            modelBuilder.ApplyConfiguration(new OrderdetailConfiguration());
+            modelBuilder.ApplyConfiguration(new CategoryTranslationConfiguration());
+            modelBuilder.ApplyConfiguration(new ContactConfiguration());
+            modelBuilder.ApplyConfiguration(new LanguageConfiguration());
+            modelBuilder.ApplyConfiguration(new ProductTranslationConfiguration());
+            modelBuilder.ApplyConfiguration(new PromotionConfiguration());
+            modelBuilder.ApplyConfiguration(new TransactionConfiguration());
+
+            modelBuilder.ApplyConfiguration(new AppUserConfiguration());
+            modelBuilder.ApplyConfiguration(new AppRoleConfiguration());
+            modelBuilder.ApplyConfiguration(new ProductImageConfiguration());
+            modelBuilder.ApplyConfiguration(new SlideConfiguration());
         }
 
         public DbSet<product> Products { get; set; }
